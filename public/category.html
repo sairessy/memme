@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel = "icon" type = "image/png" href = "assets/img/logo.png">
+	<link rel="stylesheet" href="css/_libs/all.css">
+	<link rel="stylesheet" href="css/main.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
+	<link rel="stylesheet" type="text/css" href="css/category.css">	
+	<link rel="stylesheet" href="css/common.css">
+	<title>Memme - Categoria</title>
+</head>
+<body>
+	<header>
+		<div id="logo-nav">
+			<a id="logo" href="index.html"><span id="icon">M</span><span id="title">Memme </span></a>
+		
+			<div id="user">
+				<i class="fa fa-user"></i>
+			</div>
+		
+			<form id="form-search">
+				<input id="search"	type="search" placeholder="Pesquisar música ou cantor">
+			</form>
+		</div>
+	</header>
+
+	<main>
+		<aside id="left">
+			<form action="" id="form-subscribe">
+				<input type="email" placeholder="Receba novidades no seu email">
+				<span>&star; Cancele a qualquer momento</span>
+			</form>
+
+			<div id="social">
+				<a href="https://facebook.com/sairessevictorino" target="_blank"><i style="color:#3b5999" class="fab fa-facebook"></i></a>
+				<a href="+258842572881" target="_blank"><i style="color:#25D366" class="fab fa-whatsapp"></i></a>
+				<a href="sairessy@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+			</div>
+			
+		</aside>
+		
+		<section>
+			<div id="nav-wrap">
+				<span><i class="fa fa-angle-left"></i></span>
+				<nav>
+					<a href="index.html">Home</a>
+					<a href="category.html?tag=namoro">Namoro</a>
+					<a href="category.html?tag=quotidiano">Quotidiano</a>
+					<a href="category.html?tag=festa">Festa</a>
+					<a href="category.html?tag=mentira">Mentira</a>
+				</nav>
+				<span><i class="fa fa-angle-right"></i></span>
+			</div>
+
+			<h1 id="results-label"></h1>
+
+			<div id="items"></div>
+
+			<!-- <button><i class="fa fa-angle-down"></i>Mais hits</button> -->
+		</section>
+
+		<aside id="right">
+			<strong id="daily-update-label">&star; Actualização diária</strong>
+			<h1>Outras categorias</h1>
+			
+			<ul>
+				<li>Mais baixadas</li>
+				<li>Populares</li>
+				<li>Novos hits</li>
+			</ul>
+
+			<select id="other-categories">
+				<option></option>
+				<option>Populares</option>
+				<option>Novas</option>
+			</select>
+
+			<div class="support">
+				<strong>Apoie</strong>
+				<div class="pays">
+					<a href="#"><i class="fab fa-paypal"></i></a>
+					<a href="+258842572881"><i class="far fa-circle"></i></a>
+				</div>
+			</div>
+		</aside>
+	</main>
+
+	<div id="btn-comment"><i class="fa fa-arrow-up"></i></div>
+
+	<footer>
+		<div>&copy; Memmes <div>
+	</footer>
+
+	<script src="js/_libs/jquery-3.5.1.min.js"></script>
+	<script src="js/Memme.js"></script>
+	<script src="js/common.js"></script>
+	<script>
+
+		
+		const url = new URL(window.location.href);
+		const tag = url.searchParams.get('tag');
+		const data = getData();
+		
+		console.log(tag)
+		console.log(data)
+
+		function getData() {
+			let d = [];
+
+			$.ajax({
+				url: 'js/data.json',
+				async: false,
+				data: {},
+				success: (data)=> {
+					data.forEach(dt => {
+						const include = dt.categories.includes(tag.toLowerCase());
+						console.log(include)
+						if(include) {
+							d.push(dt);
+						}
+					});
+				}
+			});
+
+			return d;
+		}
+
+		let memmes = []; 
+
+		data.forEach(d=> {
+			memmes.push(new Memme(d));
+		});
+
+		let limInf = 0;
+		let limSup = data.length;
+		let inc = 4;
+
+		// Limit conent based on the screen width
+		// if(innerWidth <= 1024) {
+		// 	limSup = 4;
+		// 	inc = 4;  
+		// }
+
+		const putMemmes = (lInf, lSup)=> {
+			
+			for (let i = lInf; i < lSup; i++) {
+				const id = memmes[i].id;
+				const memme = memmes[i].memme;
+				const categories = memmes[i].categories;
+
+				let tags = '';
+					categories.forEach(c=> {
+					tags += `<a href="category.html?tag=${c}">${c}</a>`;
+				});
+			
+
+				const item = `
+					<div class="item" id="">
+
+						<div class="others">${tags}</div>
+						
+						<div class="cover" style="background-image: url(assets/img/photos/.png)">
+							<h4>${memme}</h4>
+						</div>
+
+						<div class="controllers">
+							<a class="" id=""><i id="" class="fa fa-copy"></i></a> 
+							<a class="" ><i class="fab fa-facebook"></i></a>
+							<a class="" id=""><i id="" class="fab fa-whatsapp" href="#"></i></a>
+						</div>
+					</div>
+				`;
+
+				$('#items').append(item);
+			}
+		}
+
+		// Init content
+		putMemmes(limInf, limSup);
+
+		// Pagination
+		$('button').click(()=> {
+			limInf += inc;
+			limSup += inc;
+			
+			if(limSup >= memmes.length) {
+				$('button').hide();
+				putMemmes(limInf, memmes.length);
+			} else {
+				putMemmes(limInf, limSup); 
+			}
+
+			$('body, html').animate({
+				scrollTop: scrollY + 300
+			});
+
+		});
+	</script>
+</body>
+</html>

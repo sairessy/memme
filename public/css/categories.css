@@ -1,0 +1,7 @@
+h1#results-label {
+	color: #666;
+	font-weight: normal;
+	border-bottom: 1px solid #eee;
+	text-align: center;
+	font-size: 16px;
+}

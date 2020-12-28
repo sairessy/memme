@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel = "icon" type = "image/png" href = "assets/img/logo.png">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> -->
+	<link rel="stylesheet" href="css/_libs/all.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/common.css">	
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<title>Memme </title>
+</head>
+<body>
+	<header>
+		<div id="logo-nav">
+			<a id="logo" href="index.html"><span id="icon">M</span><span id="title">Memme </span></a>
+		
+			<div id="user">
+				<i class="fa fa-user"></i>
+			</div>
+		
+			<form id="form-search">
+				<input id="search"	type="search" placeholder="Pesquisar música ou cantor" aria-autocomplete="false">
+			</form>
+		</div>
+	</header>
+
+	<main>
+		<aside id="left">
+			<form action="" id="form-subscribe">
+				<input type="email" placeholder="Receba novidades no seu email">
+				<span>&star; Cancele a qualquer momento</span>
+			</form>
+
+			<div id="social">
+				<a href="https://facebook.com/sairessy.victorino" target="_blank"><i style="color:#3b5999" class="fab fa-facebook"></i></a>
+				<a href="+258842572881" target="_blank"><i style="color:#25D366" class="fab fa-whatsapp"></i></a>
+				<a href="sairessy@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+			</div>
+			
+		</aside>
+		
+		<section>
+
+			<div id="nav-wrap">
+				<span><i class="fa fa-angle-left"></i></span>
+				<nav>
+					<a href="index.html">Home</a>
+					<a href="category.html?tag=namoro">Namoro</a>
+					<a href="category.html?tag=quotidiano">Quotidiano</a>
+					<a href="category.html?tag=festa">Festa</a>
+					<a href="category.html?tag=mentira">Mentira</a>
+				</nav>
+				<span><i class="fa fa-angle-right"></i></span>
+			</div>
+
+
+			<div id="items"></div>
+
+			<button><i class="fa fa-angle-down"></i>Mais memmes</button>
+		</section>
+
+		<aside id="right">
+			<strong id="daily-update-label">&star; Actualização diária</strong>
+			<h1>Outras categorias</h1>
+
+			<select id="other-categories">
+				<option></option>
+				<option>Populares</option>
+				<option>Novas</option>
+			</select>
+
+			<div class="support">
+				<strong>Apoie</strong>
+				<div class="pays">
+					<a href="#"><i class="fab fa-paypal"></i></a>
+					<a href="+258842572881"><i class="far fa-circle"></i></a>
+				</div>
+			</div>
+		</aside>
+	</main>
+
+	<div id="btn-comment"><i class="fa fa-arrow-up"></i></div>
+
+	<footer>
+		<div>&copy; Memmes <div>
+	</footer>
+
+	<script src="js/_libs/jquery-3.5.1.min.js"></script>
+	<script src="js/Data.js"></script>
+	<script src="js/Memme.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/common.js"></script>
+</body>
+</html>
