@@ -113,13 +113,14 @@ header form {
 }
 
 header input {
-	padding: 3px 3px 3px 40px;
+	padding: 3px 3px 3px 3px;
 	width: 38px;
 	height: 38px;
 	outline-color: #eee;
+	outline: none;
 	border: none;
-	border-radius: 5px;
-	box-shadow: 0 0 1px 2px #eee;
+	border-radius: 25px;
+	box-shadow: 0 0 4px 2px #f3f3f3;
 	background: url(../../assets/img/search.png) no-repeat 10px center/20px;
 	background-color: #fff;
 	font-size: 13px;
@@ -128,6 +129,7 @@ header input {
 
 header input:focus {
 	width: 600px;
+	padding-left: 40px;
 }
 
 main {
@@ -404,7 +406,7 @@ footer > div {
 .support strong {
 	text-align: center;
 	margin: auto;
-	color: #ccc;
+	color: #999;
 	font-weight: normal;
 	display: block;
 }	
@@ -420,10 +422,13 @@ footer > div {
 	height: 20px;
 	justify-content: center;
 	align-items: center;
-	/* background-color: #eee; */
 	color: #666;
 	margin: 5px;
 	border-radius: 2px;
+}
+
+.pays a#m-pesa {
+	background: url(../assets/img/M-pesa-logo.png) no-repeat center center/cover;
 }
 
 @media screen and (max-width: 414px) {

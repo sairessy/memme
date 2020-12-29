@@ -4,6 +4,14 @@ $('#form-search').submit((e)=> {
     window.location.href = 'search.html?tag='+txt;
 });
 
+$('header input').focus(()=> {
+   $('header input').attr({"placeholder": 'Ex.: amizade, casa, amante'}) 
+});
+
+$('header input').blur(()=> {
+    $('header input').attr({"placeholder": ''}) ;
+});
+
 
 $("#other-categories").change((e)=> {
     const txt = $("#other-categories :selected").text();
