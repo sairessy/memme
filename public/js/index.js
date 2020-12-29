@@ -22,14 +22,8 @@ data.forEach(d=> {
 });
 
 let limInf = 0;
-let limSup = 3;
-let inc = 3;
-
-// Limit conent based on the screen width
-if(innerWidth <= 1024) {
-    limSup = 4;
-    inc = 4;  
-}
+let limSup = 6;
+let inc = 6; 
 
 const putMemmes = (lInf, lSup)=> {
     
