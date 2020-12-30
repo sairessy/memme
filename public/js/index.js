@@ -42,7 +42,7 @@ const putMemmes = (lInf, lSup)=> {
 
                 <div class="others">${tags}</div>
                 
-                <div class="cover" style="background-image: url(assets/img/photos/.png)">
+                <div class="cover">
                     <h4>${memme}</h4>
                 </div>
 
