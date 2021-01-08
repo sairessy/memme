@@ -176,5 +176,35 @@
         "id": 28,
         "memme": "👩: amor peço emprestado seu telefone quero usar a calculadora <br> 🧑: pegue na mesa <br> 👩: Amor quem é Ana <br> 🧑: É a raiz quadrada de 2.",
         "categories": ["namoro", "quotidiano"]
+    },
+
+    {
+        "id": 29,
+        "memme": "Meu vizinho se mudou,... <br> e levou a esposa. 👩😢",
+        "categories": ["namoro", "quotidiano"]
+    },
+
+    {
+        "id": 30,
+        "memme": "-Porquê você dormiu com o meu marido? 🤷‍♀️ <br>-Estávamos com sono! 👩💤",
+        "categories": ["namoro", "quotidiano"]
+    },
+
+    {
+        "id": 31,
+        "memme": "As Mulheres que têm nomes bíblicos, são as mais Bandidas <br> Maria estou a mentir?",
+        "categories": ["namoro", "quotidiano"]
+    },
+
+    {
+        "id": 32,
+        "memme": "Se eu ficar solteiro até o próximo mês vou publicar os meus screenshots, vamos todos ficar solteiros.",
+        "categories": ["namoro", "quotidiano"]
+    },
+
+    {
+        "id": 33,
+        "memme": "Ah porque os morto não prejudica os vivos Mormão conheces ISAC NEWTON?",
+        "categories": ["namoro", "quotidiano"]
     }
 ]

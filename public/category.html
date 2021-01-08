@@ -27,7 +27,7 @@
 			<a id="logo" href="index.html"><span id="icon">M</span><span id="title">Memme </span></a>
 		
 			<div id="user">
-				<i class="fa fa-user"></i>
+				<i class="fa fa-globe"></i>
 			</div>
 		
 			<form id="form-search">
@@ -144,12 +144,6 @@
 		let limSup = data.length;
 		let inc = 4;
 
-		// Limit conent based on the screen width
-		// if(innerWidth <= 1024) {
-		// 	limSup = 4;
-		// 	inc = 4;  
-		// }
-
 		const putMemmes = (lInf, lSup)=> {
 			
 			for (let i = lInf; i < lSup; i++) {
@@ -202,7 +196,6 @@
 			$('body, html').animate({
 				scrollTop: scrollY + 300
 			});
-
 		});
 	</script>
 </body>
