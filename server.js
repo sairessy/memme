@@ -1,16 +1,8 @@
 const express = require('express')
-const { default: fetch } = require('node-fetch')
-const Datastore = require('nedb')
-const { Router } = require('express')
 const app = express()
-app.listen(3000, ()=> {
+const port = process.env.PORT || 3000
+app.listen(port, ()=> {
     console.log('Listening... ✌')
 })
 
-app.get('/', (req, res)=> {
-    res.sendFile(__dirname+'/public/'+'index.html')
-})
- 
-app.get('*', (req, res)=> {
-    res.sendFile(__dirname+'/public/'+'404.html')
-})
+app.use(express.static('public'))
